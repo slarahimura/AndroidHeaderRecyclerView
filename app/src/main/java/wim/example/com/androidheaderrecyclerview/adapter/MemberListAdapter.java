@@ -29,7 +29,7 @@ public class MemberListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
     private void add(Member item) {
         memberList.add(item);
-        notifyItemInserted(memberList.size() - 1);
+        notifyItemInserted((memberList.size() + 1) - 1);
     }
 
     public void addAll(List<Member> memberList) {
@@ -47,7 +47,7 @@ public class MemberListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     }
 
     public void clear() {
-        while (getItemCount() > 0) {
+        while (getItemCount() > 1) {
             remove(getItem(-1));
         }
     }
